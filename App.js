@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Text, FlatList } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 
 const names = [
   "Aaran",
@@ -2748,13 +2748,28 @@ const namesAsObjects = names.map((item) => {
   };
 });
 
-export default function App() {
-  function renderName({ item }) {
-  return <Text>{item.name}</Text>;
-}
+export default function App() { 
+  const renderName = ({ item }) => (
+    <View
+      style={{
+        padding: 20,
+        margin: 10,
+        backgroundColor: "tomato",
+        borderBottomColor: "#200",
+        borderBottomWidth: 1,
+        shadowColor: "black",
+        shadowRadius: 5,
+        shadowOpacity: 0.2,
+        shadowOffset: { x: 0, height: 3 },
+        width: 300,
+      }}
+    >
+      <Text style={{textAlign: "center",}}>{item.name}</Text>
+    </View>
+  );
 
   return (
-    <FlatList
+    <FlatList contentContainerStyle={styles.container}
       data={namesAsObjects}
       renderItem={renderName}
       keyExtractor={(item) => item.name}
@@ -2764,7 +2779,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "skyblue",
+    backgroundColor: "black",
     alignItems: "center",
     justifyContent: "center",
   },
