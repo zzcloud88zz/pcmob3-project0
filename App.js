@@ -2,15 +2,46 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const name = ["Adam", "Bob", "Claire", "Dinah"];
+const names = [
+  "Aaran",
+  "Aaren",
+  "Aarez",
+  "Aarman",
+  "Aaron",
+  "Aaron-James",
+  "Aarron",
+  "Aaryan",
+  "Aaryn",
+  "Aayan",
+  "Aazaan",
+  "Abaan",
+  "Abbas",
+  "Abdallah",
+  "Abdalroof",
+  "Abdihakim",
+  "Abdirahman",
+  "Abdisalam",
+  "Abdul",
+  "Abdul-Aziz",
+  "Abdulbasir",
+  "Abdulkadir",
+  "Abdulkarem",
+];
 
 export default function App() {
+  function displayNames() {
+    let namesJSX = [];
+
+    for (let i = 1; i < names.length; i++) {
+      namesJSX.push(<Text>{names[i]}</Text>);
+    }
+
+    return namesJSX;
+  }
+
   return (
     <View style={styles.container}>
-      <Text>{name[0]}</Text>
-      <Text>{name[1]}</Text>
-      <Text>{name[2]}</Text>
-      <Text>{name[3]}</Text>
+      {displayNames()}
       <StatusBar style="auto" />
     </View>
   );
@@ -19,7 +50,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'skyblue',
     alignItems: 'center',
     justifyContent: 'center',
   },
