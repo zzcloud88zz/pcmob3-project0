@@ -2761,7 +2761,6 @@ export default function App() {
         shadowRadius: 5,
         shadowOpacity: 0.2,
         shadowOffset: { x: 0, height: 3 },
-        width: 300,
       }}
     >
       <Text style={{textAlign: "center",}}>{item.name}</Text>
@@ -2769,7 +2768,7 @@ export default function App() {
   );
 
   return (
-    <FlatList contentContainerStyle={styles.container}
+    <FlatList
       data={namesAsObjects}
       renderItem={renderName}
       keyExtractor={(item) => item.name}
